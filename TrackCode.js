@@ -27,5 +27,6 @@ function makeNewUserID(){
 	return new Date().getTime().toString();
 }
 
+userCheckIn()
   
   //TrackCode last modified Mon Dec 8 14:53:09 SGT 2014
