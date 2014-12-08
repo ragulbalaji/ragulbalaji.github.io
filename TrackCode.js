@@ -5,5 +5,27 @@
 
   ga('create', 'UA-9316500-9', 'auto');
   ga('send', 'pageview');
+
+function userCheckIn(){
+	var uid = getLocalStorageStuff("id");
+	document.title += " " + uid;
+}
+
+function getLocalStorageStuff(a){
+  b = localStorage.getItem(a);
+  if(b == null){
+    if(a == "id"){
+      localStorage.setItem(a, makeNewUserID());
+    }else{
+      localStorage.setItem(a, 0);
+    }
+  }
+  return localStorage.getItem(a);
+}
+
+function makeNewUserID(){
+	return new Date().getTime().toString();
+}
+
   
-  //GACode last modified Mon Dec 8 14:53:09 SGT 2014
+  //TrackCode last modified Mon Dec 8 14:53:09 SGT 2014
