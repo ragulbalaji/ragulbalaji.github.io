@@ -8,7 +8,7 @@
 
 function userCheckIn(){
 	var uid = getLocalStorageStuff("id");
-	document.title += " * " + uid;
+	document.title += " @ " + uid;
 }
 
 function getLocalStorageStuff(a){
