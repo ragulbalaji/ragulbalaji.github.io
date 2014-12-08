@@ -27,6 +27,6 @@ function makeNewUserID(){
 	return new Date().getTime().toString();
 }
 
-userCheckIn()
+userCheckIn();
   
 var TrackCode_Last_Modify_Date = "Mon Dec 8 20:03:40 SGT 2014";
