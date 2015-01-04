@@ -22,7 +22,12 @@ function getLocalStorageStuff(a){
   b = localStorage.getItem(a);
   if(b == null){
     if(a == "id"){
-      localStorage.setItem(a, makeNewUserID());
+      var person = prompt("Please enter your name");
+      if (person != null) {
+        localStorage.setItem(a, person);
+      }else{
+      	localStorage.setItem(a, makeNewUserID());
+      }
     }else{
       localStorage.setItem(a, 0);
     }
