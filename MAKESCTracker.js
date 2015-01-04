@@ -22,8 +22,8 @@ function getLocalStorageStuff(a){
   b = localStorage.getItem(a);
   if(b == null){
     if(a == "id"){
-      var person = prompt("Please enter your name");
-      if (person != null) {
+      var person = prompt("Give me a username!");
+      if (person != null && person != "") {
         localStorage.setItem(a, person);
       }else{
       	localStorage.setItem(a, makeNewUserID());
