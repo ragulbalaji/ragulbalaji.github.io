@@ -14,20 +14,15 @@
   ga('send', 'pageview');
 
 function userCheckIn(){
-	var uid = getLocalStorageStuff("id");
-	document.title += " @ " + uid;
+	var myuid = getLocalStorageStuff("id");
+	ga(‘set’, ‘&uid’, myuid);
 }
 
 function getLocalStorageStuff(a){
   b = localStorage.getItem(a);
   if(b == null){
     if(a == "id"){
-      var person = prompt("Give me a username!");
-      if (person != null && person != "") {
-        localStorage.setItem(a, person);
-      }else{
-      	localStorage.setItem(a, makeNewUserID());
-      }
+      localStorage.setItem(a, makeNewUserID());
     }else{
       localStorage.setItem(a, 0);
     }
