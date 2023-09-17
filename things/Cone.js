@@ -1,6 +1,6 @@
 class Cone {
   constructor (config) {
-    this.config = config
+    this.config = structuredClone(config)
 
     this.agent = {
       lastUpdate: 0,
@@ -29,8 +29,8 @@ class Cone {
     this.config.x += this.agent.vx
     this.config.z += this.agent.vz
 
-    this.config.x = Math.max(-10, Math.min(10, this.config.x))
-    this.config.z = Math.max(-10, Math.min(10, this.config.z))
+    this.config.x = Math.max(-32, Math.min(32, this.config.x))
+    this.config.z = Math.max(-32, Math.min(32, this.config.z))
   }
 
   destroy () {

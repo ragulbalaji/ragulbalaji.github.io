@@ -1,14 +1,17 @@
 import * as THREE from '../lib/three.module.min.js'
 
-export default class Cone {
+export default class Player {
   constructor (scene, config) {
     this.scene = scene
 
     this.config = {}
     this.setConfig(config)
 
-    const geometry = new THREE.ConeGeometry(1, 2, 8)
-    const material = new THREE.MeshStandardMaterial({ color: Math.random() * 0xffffff, roughness: Math.random() })
+    const texture = new THREE.TextureLoader().load(`https://mineskin.eu/helm/${this.config.name}/8.png`)
+    texture.magFilter = THREE.NearestFilter
+
+    const geometry = new THREE.BoxGeometry(1, 1, 1)
+    const material = new THREE.MeshStandardMaterial({ map: texture })
     this.mesh = new THREE.Mesh(geometry, material)
 
     this.scene.add(this.mesh)
