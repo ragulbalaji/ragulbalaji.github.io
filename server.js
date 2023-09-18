@@ -111,7 +111,9 @@ setInterval(() => {
     // }
   }
 
-  const globalUpdateStates = {}
+  const globalUpdateStates = {
+    timestamp: Date.now()
+  }
   for (const id in gameObjects) {
     globalUpdateStates[id] = gameObjects[id].config
   }

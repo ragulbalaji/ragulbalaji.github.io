@@ -80,7 +80,7 @@ camera.config = {
   vy: 0,
   vz: 0,
   ax: 0,
-  ay: 0.01, // gravity
+  ay: 0.02, // gravity
   az: 0
 }
 
@@ -156,6 +156,8 @@ socket.on('connect', () => {
 
 socket.on('globalupdate', (data) => {
   // console.log('globalupdate', data)
+
+  if (Date.now() - data.timestamp > 1000) return
 
   for (const id in gameObjects) {
     if (!data[id]) {
